@@ -1,4 +1,4 @@
-FROM mediawiki:1.36.0
+FROM mediawiki:1.37.0
 
 # install deps
 RUN apt-get update && apt-get install -y \
