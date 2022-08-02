@@ -1,4 +1,8 @@
 
+Auth provider for minetest
+
+Uses the [mtui](https://github.com/minetest-go/mtui) to delegate user logins
+
 
 # Source
 * https://git.bananach.space/AuthMinetest.git
@@ -18,10 +22,10 @@ $wgAuthManagerAutoConfig['primaryauth'] = [
 		'class' => MediaWiki\Auth\MinetestPasswordPrimaryAuthenticationProvider::class,
 		'args' => [
 			[
-				'minetestUrl' => 'http://your.minetest.url',
+				'minetestUrl' => 'http://your-mtui-url',
 			]
 		],
 		'sort' => 0,
 	],
-	];
+];
 ```

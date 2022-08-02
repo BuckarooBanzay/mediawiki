@@ -13,6 +13,7 @@ Dockerized mediawiki
 * SimpleEmbed
 * Matomo
 * DiscordNotifications
+* MinetestAuth
 
 ## Credentials for local testing
 
