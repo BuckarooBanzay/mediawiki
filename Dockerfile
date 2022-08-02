@@ -1,4 +1,4 @@
-FROM mediawiki:1.37.0
+FROM mediawiki:1.38.2
 
 # install deps
 RUN apt-get update && apt-get install -y \
@@ -24,8 +24,8 @@ RUN docker-php-ext-configure gd \
 COPY extensions/AuthMinetest /var/www/html/extensions/AuthMinetest
 COPY extensions/SimpleEmbed /var/www/html/extensions/SimpleEmbed
 RUN cd /var/www/html/extensions/ &&\
-  git clone --depth=1 https://github.com/wikimedia/mediawiki-extensions-MsUpload MsUpload  -b REL1_36 &&\
-  git clone --depth=1 https://github.com/wikimedia/mediawiki-extensions-TemplateStyles TemplateStyles -b REL1_36 &&\
+  git clone --depth=1 https://github.com/wikimedia/mediawiki-extensions-MsUpload MsUpload  -b REL1_38 &&\
+  git clone --depth=1 https://github.com/wikimedia/mediawiki-extensions-TemplateStyles TemplateStyles -b REL1_38 &&\
   git clone --depth=1 https://github.com/ProfessionalWiki/SimpleBatchUpload -b 1.8.2 &&\
   git clone --depth=1 https://github.com/cmln/mw-font-awesome/ -b 1.0 FontAwesome &&\
   git clone --depth=1 https://github.com/DaSchTour/matomo-mediawiki-extension Matomo -b v4.0.0 &&\
