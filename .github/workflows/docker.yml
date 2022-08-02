@@ -17,3 +17,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         tag_names: true
         cache: true
+        no_push: ${{ startsWith(github.ref, 'dependabot/') }}
