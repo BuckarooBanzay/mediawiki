@@ -19,6 +19,7 @@ services:
   ports:
     - "80:80"
   volumes:
+    - "./extensions/AuthMinetest:/var/www/html/extensions/AuthMinetest"
     - "wiki_images:/var/www/html/images"
     - "wiki_cache:/var/www/html/cache"
     - "./LocalSettings.php:/var/www/html/LocalSettings.php"

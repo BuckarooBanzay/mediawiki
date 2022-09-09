@@ -60,13 +60,7 @@ class MinetestPasswordPrimaryAuthenticationProvider extends AbstractPrimaryAuthe
 			return AuthenticationResponse::newAbstain();
 		}
 
-		$username = User::getCanonicalName( $req->username, 'usable' );
-		if ( $username === false ) {
-			return AuthenticationResponse::newAbstain();
-		}
-
 		$token = $this->getMinetestUserToken( $req->username,  $req->password );
-
 		if ( $token === false ) {
 			return AuthenticationResponse::newAbstain();
 

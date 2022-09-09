@@ -85,9 +85,8 @@ $wgRightsIcon = "";
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
 
-# The following permissions were set based on your choice in the installer
 $wgGroupPermissions['*']['edit'] = false;
-$wgGroupPermissions['*']['createaccount'] = true;
+$wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['autocreateaccount'] = true;
 $wgGroupPermissions['*']['editmyprivateinfo'] = true;
 $wgGroupPermissions['*']['editmyoptions'] = true;
@@ -121,7 +120,19 @@ wfLoadExtension( 'Interwiki' );
 wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'MsUpload' );
+
 wfLoadExtension( 'AuthMinetest' );
+$wgAuthManagerAutoConfig['primaryauth'] = [
+        MediaWiki\Auth\MinetestPasswordPrimaryAuthenticationProvider::class => [
+                'class' => MediaWiki\Auth\MinetestPasswordPrimaryAuthenticationProvider::class,
+                'args' => [
+                        [
+                                'minetestUrl' => 'http://ui:8080',
+                        ]
+                ],
+                'sort' => 0,
+        ],
+];
 
 require_once "$IP/extensions/SimpleEmbed/SimpleEmbed.php";
 
