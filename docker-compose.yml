@@ -23,8 +23,28 @@ services:
     - "wiki_cache:/var/www/html/cache"
     - "./LocalSettings.php:/var/www/html/LocalSettings.php"
   
+ minetest:
+  image: registry.gitlab.com/minetest/minetest/server:5.6.0
+  user: root
+  volumes:
+    - "world:/root/.minetest/worlds/world"
+  ports:
+    - "30000:30000/udp"
+
+ ui:
+  image: buckaroobanzay/mtui:1.5
+  environment:
+   WORLD_DIR: "/data/world"
+   COOKIE_DOMAIN: "localhost"
+   COOKIE_SECURE: "false"
+   COOKIE_PATH: "/"
+  ports:
+   - "8080:8080"
+  volumes:
+   - "world:/data/world"
 
 volumes:
  postgres_data: {}
  wiki_images: {}
  wiki_cache: {}
+ world: {}
