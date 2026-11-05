@@ -116,7 +116,6 @@ wfLoadExtension( 'CiteThisPage' );
 wfLoadExtension( 'CodeEditor' );
 wfLoadExtension( 'ConfirmEdit' );
 wfLoadExtension( 'ImageMap' );
-wfLoadExtension( 'Interwiki' );
 wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'MsUpload' );
@@ -134,19 +133,16 @@ $wgAuthManagerAutoConfig['primaryauth'] = [
         ],
 ];
 
-require_once "$IP/extensions/SimpleEmbed/SimpleEmbed.php";
-
-
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
 
 wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 
 wfLoadExtension( 'MultimediaViewer' );
-wfLoadExtension( 'SimpleBatchUpload' );
-wfLoadExtension( 'TemplateStyles' );
-wfLoadExtension( 'JavascriptSlideshow' );
-wfLoadExtension( 'FontAwesome' );
+#wfLoadExtension( 'SimpleBatchUpload' );
+#wfLoadExtension( 'TemplateStyles' );
+#wfLoadExtension( 'JavascriptSlideshow' );
+#wfLoadExtension( 'FontAwesome' );
 
 $wgShowExceptionDetails = true;
 
